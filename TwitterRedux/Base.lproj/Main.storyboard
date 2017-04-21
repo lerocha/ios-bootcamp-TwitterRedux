@@ -48,6 +48,7 @@
                     </view>
                     <connections>
                         <outlet property="contentView" destination="NV4-dr-A7v" id="8h3-Jt-VQG"/>
+                        <outlet property="leftMarginConstraint" destination="vkL-M9-gPt" id="hBo-Aw-4DU"/>
                         <outlet property="menuView" destination="wXn-C0-4Mj" id="Tnn-tV-Gdz"/>
                     </connections>
                 </viewController>

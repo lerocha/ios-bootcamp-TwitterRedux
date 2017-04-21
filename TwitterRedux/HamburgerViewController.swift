@@ -12,6 +12,8 @@ class HamburgerViewController: UIViewController {
 
     @IBOutlet weak var menuView: UIView!
     @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var leftMarginConstraint: NSLayoutConstraint!
+    var originalLeftMargin: CGFloat!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +26,23 @@ class HamburgerViewController: UIViewController {
     }
 
     @IBAction func onPanGesture(_ sender: UIPanGestureRecognizer) {
+        let translation = sender.translation(in: view)
+        let velocity = sender.velocity(in: view)
+        
+        if sender.state == .began {
+            originalLeftMargin = leftMarginConstraint.constant
+        } else if sender.state == .changed {
+            leftMarginConstraint.constant = originalLeftMargin + translation.x
+        } else if sender.state == .ended {
+            UIView.animate(withDuration: 0.3, animations: { 
+                if velocity.x > 0 {
+                    self.leftMarginConstraint.constant = self.view.frame.size.width - 50
+                } else {
+                    self.leftMarginConstraint.constant = 0
+                }
+                self.view.layoutIfNeeded()
+            })
+        }
     }
 
 }
