@@ -64,7 +64,7 @@
         <!--Menu View Controller-->
         <scene sceneID="6ZU-dT-Veo">
             <objects>
-                <viewController id="Zpa-RF-yhj" customClass="MenuViewController" customModule="TwitterRedux" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MenuViewController" id="Zpa-RF-yhj" customClass="MenuViewController" customModule="TwitterRedux" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="i7I-03-aRu"/>
                         <viewControllerLayoutGuide type="bottom" id="EEl-k3-D3j"/>
