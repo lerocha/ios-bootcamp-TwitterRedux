@@ -10,6 +10,9 @@ import UIKit
 
 class HamburgerViewController: UIViewController {
 
+    @IBOutlet weak var menuView: UIView!
+    @IBOutlet weak var contentView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,6 +23,8 @@ class HamburgerViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func onPanGesture(_ sender: UIPanGestureRecognizer) {
+    }
 
 }
 

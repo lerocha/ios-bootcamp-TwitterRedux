@@ -14,12 +14,25 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     let menuOptions = [ "Profile", "Timeline", "Mentions" ]
     
+    private var profileViewController: UIViewController!
+    private var timelineViewController: UIViewController!
+    private var mentionsViewController: UIViewController!
+    
+    var viewControllers: [UIViewController] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
         tableView.dataSource = self
         tableView.delegate = self
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        profileViewController = storyboard.instantiateViewController(withIdentifier: "ProfileViewController")
+        timelineViewController = storyboard.instantiateViewController(withIdentifier: "TimelineViewController")
+        mentionsViewController = storyboard.instantiateViewController(withIdentifier: "MentionsViewController")
+        viewControllers.append(profileViewController)
+        viewControllers.append(timelineViewController)
+        viewControllers.append(mentionsViewController)
     }
 
     override func didReceiveMemoryWarning() {

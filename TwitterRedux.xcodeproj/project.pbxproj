@@ -14,6 +14,9 @@
 		60D33E921EA9CCE7004D21DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60D33E911EA9CCE7004D21DE /* Assets.xcassets */; };
 		60D33E951EA9CCE7004D21DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60D33E931EA9CCE7004D21DE /* LaunchScreen.storyboard */; };
 		60D33EA01EA9D44F004D21DE /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D33E9F1EA9D44F004D21DE /* MenuViewController.swift */; };
+		60D33EA21EA9DB2F004D21DE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D33EA11EA9DB2F004D21DE /* ProfileViewController.swift */; };
+		60D33EA41EA9DB3A004D21DE /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D33EA31EA9DB3A004D21DE /* TimelineViewController.swift */; };
+		60D33EA61EA9DB76004D21DE /* MentionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D33EA51EA9DB76004D21DE /* MentionsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +28,9 @@
 		60D33E941EA9CCE7004D21DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		60D33E961EA9CCE7004D21DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		60D33E9F1EA9D44F004D21DE /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		60D33EA11EA9DB2F004D21DE /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		60D33EA31EA9DB3A004D21DE /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
+		60D33EA51EA9DB76004D21DE /* MentionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MentionsViewController.swift; sourceTree = "<group>"; };
 		6689C05951D5BE5AB930EF32 /* Pods-TwitterRedux.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterRedux.release.xcconfig"; path = "Pods/Target Support Files/Pods-TwitterRedux/Pods-TwitterRedux.release.xcconfig"; sourceTree = "<group>"; };
 		8BA92D1B927C348C69911FC0 /* Pods_TwitterRedux.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TwitterRedux.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B37B6B08A6B3397A4BD11DD1 /* Pods-TwitterRedux.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterRedux.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TwitterRedux/Pods-TwitterRedux.debug.xcconfig"; sourceTree = "<group>"; };
@@ -102,6 +108,9 @@
 			children = (
 				60D33E8C1EA9CCE7004D21DE /* HamburgerViewController.swift */,
 				60D33E9F1EA9D44F004D21DE /* MenuViewController.swift */,
+				60D33EA11EA9DB2F004D21DE /* ProfileViewController.swift */,
+				60D33EA31EA9DB3A004D21DE /* TimelineViewController.swift */,
+				60D33EA51EA9DB76004D21DE /* MentionsViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -240,7 +249,10 @@
 			files = (
 				60D33E8D1EA9CCE7004D21DE /* HamburgerViewController.swift in Sources */,
 				60D33EA01EA9D44F004D21DE /* MenuViewController.swift in Sources */,
+				60D33EA21EA9DB2F004D21DE /* ProfileViewController.swift in Sources */,
 				60D33E8B1EA9CCE7004D21DE /* AppDelegate.swift in Sources */,
+				60D33EA41EA9DB3A004D21DE /* TimelineViewController.swift in Sources */,
+				60D33EA61EA9DB76004D21DE /* MentionsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
