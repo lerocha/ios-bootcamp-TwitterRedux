@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		24C86D88873B889B4C8ABF38 /* Pods_TwitterRedux.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BA92D1B927C348C69911FC0 /* Pods_TwitterRedux.framework */; };
+		60CAEF471EAB2E1400E392EF /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CAEF431EAB2E1400E392EF /* ApiKeys.swift */; };
+		60CAEF481EAB2E1400E392EF /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CAEF441EAB2E1400E392EF /* Tweet.swift */; };
+		60CAEF491EAB2E1400E392EF /* TwitterClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CAEF451EAB2E1400E392EF /* TwitterClient.swift */; };
+		60CAEF4A1EAB2E1400E392EF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CAEF461EAB2E1400E392EF /* User.swift */; };
 		60D33E8B1EA9CCE7004D21DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D33E8A1EA9CCE7004D21DE /* AppDelegate.swift */; };
 		60D33E8D1EA9CCE7004D21DE /* HamburgerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D33E8C1EA9CCE7004D21DE /* HamburgerViewController.swift */; };
 		60D33E901EA9CCE7004D21DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60D33E8E1EA9CCE7004D21DE /* Main.storyboard */; };
@@ -20,6 +24,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		60CAEF431EAB2E1400E392EF /* ApiKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiKeys.swift; sourceTree = "<group>"; };
+		60CAEF441EAB2E1400E392EF /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
+		60CAEF451EAB2E1400E392EF /* TwitterClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterClient.swift; sourceTree = "<group>"; };
+		60CAEF461EAB2E1400E392EF /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		60D33E871EA9CCE7004D21DE /* TwitterRedux.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterRedux.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60D33E8A1EA9CCE7004D21DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60D33E8C1EA9CCE7004D21DE /* HamburgerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +64,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		60CAEF4B1EAB2E2000E392EF /* Clients */ = {
+			isa = PBXGroup;
+			children = (
+				60CAEF431EAB2E1400E392EF /* ApiKeys.swift */,
+				60CAEF451EAB2E1400E392EF /* TwitterClient.swift */,
+			);
+			name = Clients;
+			sourceTree = "<group>";
+		};
 		60D33E7E1EA9CCE7004D21DE = {
 			isa = PBXGroup;
 			children = (
@@ -77,6 +94,7 @@
 		60D33E891EA9CCE7004D21DE /* TwitterRedux */ = {
 			isa = PBXGroup;
 			children = (
+				60CAEF4B1EAB2E2000E392EF /* Clients */,
 				60D33E9D1EA9D2FC004D21DE /* Models */,
 				60D33E9C1EA9D2E9004D21DE /* Views */,
 				60D33E9E1EA9D309004D21DE /* Controllers */,
@@ -99,6 +117,8 @@
 		60D33E9D1EA9D2FC004D21DE /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				60CAEF461EAB2E1400E392EF /* User.swift */,
+				60CAEF441EAB2E1400E392EF /* Tweet.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -247,12 +267,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60CAEF471EAB2E1400E392EF /* ApiKeys.swift in Sources */,
+				60CAEF491EAB2E1400E392EF /* TwitterClient.swift in Sources */,
 				60D33E8D1EA9CCE7004D21DE /* HamburgerViewController.swift in Sources */,
 				60D33EA01EA9D44F004D21DE /* MenuViewController.swift in Sources */,
 				60D33EA21EA9DB2F004D21DE /* ProfileViewController.swift in Sources */,
 				60D33E8B1EA9CCE7004D21DE /* AppDelegate.swift in Sources */,
 				60D33EA41EA9DB3A004D21DE /* TimelineViewController.swift in Sources */,
 				60D33EA61EA9DB76004D21DE /* MentionsViewController.swift in Sources */,
+				60CAEF4A1EAB2E1400E392EF /* User.swift in Sources */,
+				60CAEF481EAB2E1400E392EF /* Tweet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
