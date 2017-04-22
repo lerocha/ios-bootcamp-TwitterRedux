@@ -19,6 +19,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     private var mentionsViewController: UIViewController!
     
     var viewControllers: [UIViewController] = []
+    var hamburguerViewController: HamburgerViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +34,8 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         viewControllers.append(profileViewController)
         viewControllers.append(timelineViewController)
         viewControllers.append(mentionsViewController)
+        
+        hamburguerViewController.contentViewController = timelineViewController
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,6 +51,12 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         let cell = tableView.dequeueReusableCell(withIdentifier: "MenuCell", for: indexPath) as UITableViewCell
         cell.textLabel?.text = menuOptions[indexPath.row]
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        hamburguerViewController.contentViewController = viewControllers[indexPath.row]
     }
 
     /*

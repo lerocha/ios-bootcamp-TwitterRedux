@@ -99,7 +99,7 @@
             </objects>
             <point key="canvasLocation" x="24.800000000000001" y="725.48725637181417"/>
         </scene>
-        <!--Profile View Controller-->
+        <!--Profile-->
         <scene sceneID="8wN-6B-t1a">
             <objects>
                 <viewController id="Def-qi-nmk" customClass="ProfileViewController" customModule="TwitterRedux" customModuleProvider="target" sceneMemberID="viewController">
@@ -112,13 +112,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="y8e-dp-QsT"/>
+                    <navigationItem key="navigationItem" title="Profile" id="y8e-dp-QsT"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qba-kI-Xw8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-682" y="2167"/>
         </scene>
-        <!--Timeline View Controller-->
+        <!--Timeline-->
         <scene sceneID="ZqW-RR-cPh">
             <objects>
                 <viewController id="auE-lw-EAg" customClass="TimelineViewController" customModule="TwitterRedux" customModuleProvider="target" sceneMemberID="viewController">
@@ -131,13 +131,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="2My-Vz-jJX"/>
+                    <navigationItem key="navigationItem" title="Timeline" id="2My-Vz-jJX"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zKd-I4-YBB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="25" y="2167"/>
         </scene>
-        <!--Mentions View Controller-->
+        <!--Mentions-->
         <scene sceneID="OdX-1u-j28">
             <objects>
                 <viewController id="V1G-Vk-6wj" customClass="MentionsViewController" customModule="TwitterRedux" customModuleProvider="target" sceneMemberID="viewController">
@@ -150,7 +150,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="JdK-B2-Ihs"/>
+                    <navigationItem key="navigationItem" title="Mentions" id="JdK-B2-Ihs"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lXD-SY-aJO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
