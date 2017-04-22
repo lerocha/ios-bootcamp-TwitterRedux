@@ -16,16 +16,34 @@ class HamburgerViewController: UIViewController {
     var originalLeftMargin: CGFloat!
     
     var menuViewController: MenuViewController! {
-        didSet {
+        didSet(oldMenuViewController) {
+            
+            if oldMenuViewController != nil {
+                oldMenuViewController.willMove(toParentViewController: nil)
+                oldMenuViewController.view.removeFromSuperview()
+                oldMenuViewController.didMove(toParentViewController: nil)
+            }
+            
             view.layoutIfNeeded()
+            menuViewController.willMove(toParentViewController: self)
             menuView.addSubview(menuViewController.view)
+            menuViewController.didMove(toParentViewController: self)
         }
     }
     
     var contentViewController: UIViewController! {
-        didSet {
+        didSet(oldContentViewController) {
+            
+            if oldContentViewController != nil {
+                oldContentViewController.willMove(toParentViewController: nil)
+                oldContentViewController.view.removeFromSuperview()
+                oldContentViewController.didMove(toParentViewController: nil)
+            }
+            
             view.layoutIfNeeded()
+            contentViewController.willMove(toParentViewController: self)
             contentView.addSubview(contentViewController.view)
+            contentViewController.didMove(toParentViewController: self)
             
             UIView.animate(withDuration: 0.3) { 
                 self.leftMarginConstraint.constant = 0
