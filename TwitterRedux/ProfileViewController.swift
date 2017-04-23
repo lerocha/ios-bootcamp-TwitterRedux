@@ -15,6 +15,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     let refreshControl = UIRefreshControl()
     
+    var user = User.currentUser
     var tweets = [Tweet]()
     
     override func viewDidLoad() {
@@ -30,6 +31,15 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         refreshControl.addTarget(self, action: #selector(TimelineViewController.refreshControlAction(_:)), for: UIControlEvents.valueChanged)
         tableView.insertSubview(refreshControl, at: 0)
         refreshControlAction(refreshControl)
+        
+        // Handle profile refresh notification.
+        NotificationCenter.default.addObserver(forName: User.profileRefreshNotificationName, object: nil, queue: OperationQueue.main) { (notification: Notification) in
+            if let user = notification.userInfo?["user"] as? User {
+                print("profileRefreshNotification; user=\(user.screenname!)");
+                self.user = user
+                self.refreshControlAction(self.refreshControl)
+            }
+        }
     }
     
     func refreshControlAction(_ refreshControl: UIRefreshControl) {
@@ -64,7 +74,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileCell", for: indexPath) as! ProfileCell
-            cell.user = User.currentUser
+            cell.user = user
             return cell
         }
         

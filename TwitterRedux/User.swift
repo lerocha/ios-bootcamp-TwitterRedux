@@ -12,6 +12,7 @@ class User: NSObject {
     static let logoutNotificationName = Notification.Name(rawValue: "UserLogout")
     static let loginNotificationName = Notification.Name(rawValue: "UserLogin")
     static let profileOpenNotificationName = Notification.Name(rawValue: "ProfileOpen")
+    static let profileRefreshNotificationName = Notification.Name(rawValue: "ProfileRefresh")
 
     var id: Int64 = 0
     var name: String?
@@ -60,6 +61,8 @@ class User: NSObject {
         let profileBannerUrlString = dictionary["profile_banner_url"] as? String
         if let profileBannerUrlString = profileBannerUrlString {
             profileBannerUrl = URL(string: profileBannerUrlString)
+        } else {
+            profileBannerUrl = URL(string: "https://www.smartt.com/sites/default/files/public/twitter_logo_banner_12.jpg")
         }
     }
 

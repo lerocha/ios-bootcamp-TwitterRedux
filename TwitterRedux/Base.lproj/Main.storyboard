@@ -182,6 +182,7 @@
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="w8B-yx-eb2">
                                                     <rect key="frame" x="16" y="54" width="48" height="48"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="48" id="cZ1-RI-Uur"/>
                                                         <constraint firstAttribute="width" constant="48" id="rgQ-sh-K5p"/>

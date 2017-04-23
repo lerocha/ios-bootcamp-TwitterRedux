@@ -47,7 +47,9 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Handle profile view notification.
         NotificationCenter.default.addObserver(forName: User.profileOpenNotificationName, object: nil, queue: OperationQueue.main) { (notification: Notification) in
             if let user = notification.userInfo?["user"] as? User {
-                print(user.name!);
+                print("profileOpenNotification; user=\(user.screenname!)");
+                self.hamburguerViewController.contentViewController = self.profileViewController
+                NotificationCenter.default.post(name: User.profileRefreshNotificationName, object: nil, userInfo: notification.userInfo)
             }
         }
         
@@ -79,6 +81,11 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         let contentViewController = viewControllers[indexPath.row]
         if contentViewController == loginViewController {
             TwitterClient.sharedInstance.logout()
+        }
+        if contentViewController == profileViewController {
+            var userInfo: [AnyHashable : Any] = [:]
+            userInfo["user"] = User.currentUser
+            NotificationCenter.default.post(name: User.profileRefreshNotificationName, object: nil, userInfo: userInfo)
         }
         hamburguerViewController.contentViewController = viewControllers[indexPath.row]
     }
