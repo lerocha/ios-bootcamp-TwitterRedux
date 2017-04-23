@@ -23,6 +23,7 @@ class User: NSObject {
     var following: Bool = false
     var dateCreated: Date?
     var profileUrl: URL?
+    var profileBannerUrl: URL?
     
     var dictionary: NSDictionary?
     
@@ -49,6 +50,11 @@ class User: NSObject {
         let profileUrlString = dictionary["profile_image_url_https"] as? String
         if let profileUrlString = profileUrlString {
             profileUrl = URL(string: profileUrlString)
+        }
+        
+        let profileBannerUrlString = dictionary["profile_image_url_https"] as? String
+        if let profileBannerUrlString = profileBannerUrlString {
+            profileBannerUrl = URL(string: profileBannerUrlString)
         }
     }
 
