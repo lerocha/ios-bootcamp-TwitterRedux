@@ -13,6 +13,7 @@ class Tweet: NSObject {
     var id: Int64 = 0
     var text: String?
     var timestamp: Date?
+    var timestampText: String?
     var retweetCount: Int = 0
     var favoritesCount: Int = 0
     var truncated: Bool = false
@@ -34,6 +35,7 @@ class Tweet: NSObject {
             let formatter = DateFormatter()
             formatter.dateFormat = "EEE MMM d HH:mm:ss Z y"
             timestamp = formatter.date(from: timestampString)
+            timestampText = Tweet.getTimestampText(date: timestamp!)
         }
         
         if let retweetStatusDictionary = dictionary["retweeted_status"] as? NSDictionary {
@@ -52,5 +54,25 @@ class Tweet: NSObject {
             tweets.append(tweet)
         }
         return tweets
+    }
+    
+    static func getTimestampText(date: Date) -> String {
+        let days = Calendar.current.dateComponents([.day], from: date, to: Date()).day ?? 0
+        if days > 30 {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "M/d/yy"
+            return dateFormatter.string(from: date)
+        }
+        if days > 0 {
+            return String("\(days)d")
+        }
+        
+        let hours = Calendar.current.dateComponents([.hour], from: date, to: Date()).hour ?? 0
+        if hours > 0 {
+            return String("\(hours)h")
+        }
+        
+        let minutes = Calendar.current.dateComponents([.minute], from: date, to: Date()).minute ?? 0
+        return String("\(minutes)m")
     }
 }

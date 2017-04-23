@@ -75,6 +75,18 @@ class TwitterClient: BDBOAuth1SessionManager {
         })
     }
     
+    func getMentions(success: @escaping ([Tweet]) -> (), failure: @escaping (Error) -> ()) {
+        get("1.1/statuses/mentions_timeline.json", parameters: nil, success: { (task: URLSessionDataTask, response: Any) in
+            let data = response as! [NSDictionary]
+            let tweets = Tweet.tweetsWithArray(dictionaries: data)
+            print("getMentions; status=ok; total=\(tweets.count)")
+            success(tweets)
+        }, failure: { (task: URLSessionDataTask?, error: Error) in
+            print("getMentions; status=failed; error=\(error.localizedDescription)")
+            failure(error)
+        })
+    }
+    
     func currentAccount(success: @escaping (User)->(), failure: @escaping (Error)->()) {
         get("1.1/account/verify_credentials.json", parameters: nil, success: { (task: URLSessionDataTask, response: Any) in
             let data = response as! NSDictionary
