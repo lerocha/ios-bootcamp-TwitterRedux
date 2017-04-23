@@ -17,6 +17,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     private var profileViewController: UIViewController!
     private var timelineViewController: UIViewController!
     private var mentionsViewController: UIViewController!
+    private var loginViewController: UIViewController!
     
     var viewControllers: [UIViewController] = []
     var hamburguerViewController: HamburgerViewController!
@@ -31,11 +32,23 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         profileViewController = storyboard.instantiateViewController(withIdentifier: "ProfileViewController")
         timelineViewController = storyboard.instantiateViewController(withIdentifier: "TimelineViewController")
         mentionsViewController = storyboard.instantiateViewController(withIdentifier: "MentionsViewController")
+        loginViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
         viewControllers.append(profileViewController)
         viewControllers.append(timelineViewController)
         viewControllers.append(mentionsViewController)
+
+        // Handle login notification to change content view to timeline.
+        NotificationCenter.default.addObserver(forName: User.loginNotificationName, object: nil, queue: OperationQueue.main) { (notification) in
+            print("loginNotificationName")
+            self.hamburguerViewController.contentViewController = self.timelineViewController
+        }
         
-        hamburguerViewController.contentViewController = timelineViewController
+        // Sets initial content view depending
+        if User.currentUser == nil {
+            hamburguerViewController.contentViewController = loginViewController
+        } else {
+            hamburguerViewController.contentViewController = timelineViewController
+        }
     }
 
     override func didReceiveMemoryWarning() {

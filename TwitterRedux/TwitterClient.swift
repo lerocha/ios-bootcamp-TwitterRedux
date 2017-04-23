@@ -29,7 +29,7 @@ class TwitterClient: BDBOAuth1SessionManager {
         
         deauthorize()
         
-        fetchRequestToken(withPath: self.requestTokenPath, method: "GET", callbackURL: URL(string: "twitterdemo://oauth"), scope: nil, success: { (requestToken: BDBOAuth1Credential?) in
+        fetchRequestToken(withPath: self.requestTokenPath, method: "GET", callbackURL: URL(string: "twitterredux://oauth"), scope: nil, success: { (requestToken: BDBOAuth1Credential?) in
             let url = URL(string: "\(self.baseURL!.absoluteString)\(self.authorizePath)?oauth_token=\(requestToken?.token ?? "")")!
             print("login; status=ok; url=\(url.absoluteString)")
             UIApplication.shared.open(url)
@@ -48,9 +48,11 @@ class TwitterClient: BDBOAuth1SessionManager {
         let requestToken = BDBOAuth1Credential(queryString: url.query)
         fetchAccessToken(withPath: "oauth/access_token", method: "POST", requestToken: requestToken, success: { (accessToken) in
 //            let requestToken = BDBOAuth1Credential(queryString: url.query)
+            print("handleOpenUrl")
 
             self.currentAccount(success: { (user: User) in
                 User.currentUser = user
+                NotificationCenter.default.post(name: User.loginNotificationName, object: nil)
                 self.loginSuccess?()
             }, failure: { (error: Error) in
                 self.loginFailure?(error)
