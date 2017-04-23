@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		24C86D88873B889B4C8ABF38 /* Pods_TwitterRedux.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BA92D1B927C348C69911FC0 /* Pods_TwitterRedux.framework */; };
 		609384F61EAC160100B0CB39 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609384F51EAC160100B0CB39 /* LoginViewController.swift */; };
+		609384F81EAC320700B0CB39 /* TweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609384F71EAC320700B0CB39 /* TweetCell.swift */; };
 		60CAEF471EAB2E1400E392EF /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CAEF431EAB2E1400E392EF /* ApiKeys.swift */; };
 		60CAEF481EAB2E1400E392EF /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CAEF441EAB2E1400E392EF /* Tweet.swift */; };
 		60CAEF491EAB2E1400E392EF /* TwitterClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CAEF451EAB2E1400E392EF /* TwitterClient.swift */; };
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		609384F51EAC160100B0CB39 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		609384F71EAC320700B0CB39 /* TweetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetCell.swift; sourceTree = "<group>"; };
 		60CAEF431EAB2E1400E392EF /* ApiKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiKeys.swift; sourceTree = "<group>"; };
 		60CAEF441EAB2E1400E392EF /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		60CAEF451EAB2E1400E392EF /* TwitterClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterClient.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 		60D33E9C1EA9D2E9004D21DE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				609384F71EAC320700B0CB39 /* TweetCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 				60CAEF471EAB2E1400E392EF /* ApiKeys.swift in Sources */,
 				60CAEF491EAB2E1400E392EF /* TwitterClient.swift in Sources */,
 				60D33E8D1EA9CCE7004D21DE /* HamburgerViewController.swift in Sources */,
+				609384F81EAC320700B0CB39 /* TweetCell.swift in Sources */,
 				60D33EA01EA9D44F004D21DE /* MenuViewController.swift in Sources */,
 				60D33EA21EA9DB2F004D21DE /* ProfileViewController.swift in Sources */,
 				60D33E8B1EA9CCE7004D21DE /* AppDelegate.swift in Sources */,
