@@ -63,6 +63,9 @@ class HamburgerViewController: UIViewController {
     }
 
     @IBAction func onPanGesture(_ sender: UIPanGestureRecognizer) {
+        if User.currentUser == nil {
+            return
+        }
         let translation = sender.translation(in: view)
         let velocity = sender.velocity(in: view)
         
@@ -70,6 +73,9 @@ class HamburgerViewController: UIViewController {
             originalLeftMargin = leftMarginConstraint.constant
         } else if sender.state == .changed {
             leftMarginConstraint.constant = originalLeftMargin + translation.x
+            if leftMarginConstraint.constant < 0 {
+                leftMarginConstraint.constant = 0
+            }
         } else if sender.state == .ended {
             UIView.animate(withDuration: 0.3, animations: { 
                 if velocity.x > 0 {
