@@ -42,6 +42,12 @@ class TweetCell: UITableViewCell {
         }
     }
     
+    @IBAction func onProfileImageButton(_ sender: Any) {
+        var userInfo: [AnyHashable : Any] = [:]
+        userInfo["user"] = tweet.user
+        NotificationCenter.default.post(name: User.profileOpenNotificationName, object: self, userInfo: userInfo)
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

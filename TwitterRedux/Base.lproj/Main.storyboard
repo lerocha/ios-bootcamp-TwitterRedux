@@ -85,7 +85,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tK5-g7-Tpd" id="Lmq-y9-UTf">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w7R-GM-Nm5">
@@ -171,7 +171,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="182"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fMh-w2-zp4" id="yQL-5i-8pL">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="182"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="181.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fwO-F3-v5c">
@@ -284,7 +284,7 @@
                                         <rect key="frame" x="0.0" y="210" width="375" height="116"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7oh-NO-A2h" id="gl4-ZA-fDG">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="116"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="115.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Luis Rocha retweeted" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R4T-H3-tB4">
@@ -456,7 +456,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="116"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9dB-cU-XbP" id="MSJ-KH-pFU">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="116"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="115.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Luis Rocha retweeted" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JLu-L2-QD9">
@@ -471,6 +471,16 @@
                                                     <color key="textColor" red="0.53333333329999999" green="0.56862745100000001" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h6r-ph-AHH">
+                                                    <rect key="frame" x="8" y="26" width="48" height="48"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="48" id="LIa-Hz-9nP"/>
+                                                        <constraint firstAttribute="width" constant="48" id="pcD-F0-p3h"/>
+                                                    </constraints>
+                                                    <connections>
+                                                        <action selector="onProfileImageButton:" destination="9dB-cU-XbP" eventType="touchUpInside" id="X4e-TP-aZ6"/>
+                                                    </connections>
+                                                </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IfM-RO-C4s">
                                                     <rect key="frame" x="8" y="26" width="48" height="48"/>
                                                     <constraints>
@@ -565,10 +575,12 @@
                                                 <constraint firstItem="ssl-or-3Ym" firstAttribute="centerY" secondItem="uqE-6F-H1J" secondAttribute="centerY" id="hff-8d-3Dj"/>
                                                 <constraint firstItem="2Ic-c2-1U4" firstAttribute="centerY" secondItem="uqE-6F-H1J" secondAttribute="centerY" id="kKZ-VI-8Uy"/>
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="uqE-6F-H1J" secondAttribute="bottom" constant="10" id="kni-Xv-LYt"/>
+                                                <constraint firstItem="h6r-ph-AHH" firstAttribute="top" secondItem="IfM-RO-C4s" secondAttribute="top" id="kr4-L1-tFm"/>
                                                 <constraint firstItem="uIZ-dG-EnU" firstAttribute="centerY" secondItem="LVa-sI-Cda" secondAttribute="centerY" id="nfb-Nb-8Y8"/>
                                                 <constraint firstAttribute="trailing" secondItem="bwk-kr-w55" secondAttribute="trailing" constant="8" id="ouN-vH-pqe"/>
                                                 <constraint firstItem="uqE-6F-H1J" firstAttribute="leading" secondItem="bwk-kr-w55" secondAttribute="leading" id="q7F-Mg-XmA"/>
                                                 <constraint firstItem="YFw-Cf-1E9" firstAttribute="centerY" secondItem="uqE-6F-H1J" secondAttribute="centerY" id="qe4-kY-YGe"/>
+                                                <constraint firstItem="h6r-ph-AHH" firstAttribute="leading" secondItem="IfM-RO-C4s" secondAttribute="leading" id="uIh-5J-8Rx"/>
                                                 <constraint firstItem="IfM-RO-C4s" firstAttribute="top" secondItem="Qf8-cJ-yGs" secondAttribute="bottom" constant="2" id="vmt-Xt-nJe"/>
                                                 <constraint firstItem="lOX-dz-S4g" firstAttribute="centerY" secondItem="uqE-6F-H1J" secondAttribute="centerY" id="xZP-we-cxb"/>
                                                 <constraint firstItem="Qf8-cJ-yGs" firstAttribute="leading" secondItem="MSJ-KH-pFU" secondAttribute="leading" constant="40" id="ylE-wA-PR9"/>
@@ -637,7 +649,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="116"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="d1v-ge-6Cg" id="4dg-bm-DdN">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="116"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="115.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Luis Rocha retweeted" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s3q-bO-Cx1">

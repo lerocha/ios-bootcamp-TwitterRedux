@@ -44,6 +44,13 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
             self.hamburguerViewController.contentViewController = self.timelineViewController
         }
         
+        // Handle profile view notification.
+        NotificationCenter.default.addObserver(forName: User.profileOpenNotificationName, object: nil, queue: OperationQueue.main) { (notification: Notification) in
+            if let user = notification.userInfo?["user"] as? User {
+                print(user.name!);
+            }
+        }
+        
         // Sets initial content view depending
         if User.currentUser == nil {
             hamburguerViewController.contentViewController = loginViewController

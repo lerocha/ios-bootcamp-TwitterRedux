@@ -13,6 +13,8 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @IBOutlet weak var tableView: UITableView!
     
+    let refreshControl = UIRefreshControl()
+    
     var tweets = [Tweet]()
     
     override func viewDidLoad() {
@@ -25,7 +27,6 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         tableView.estimatedRowHeight = 200
         
         // initialize a UIRefreshControl
-        let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(TimelineViewController.refreshControlAction(_:)), for: UIControlEvents.valueChanged)
         tableView.insertSubview(refreshControl, at: 0)
         refreshControlAction(refreshControl)

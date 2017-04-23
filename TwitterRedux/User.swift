@@ -11,6 +11,7 @@ import UIKit
 class User: NSObject {
     static let logoutNotificationName = Notification.Name(rawValue: "UserLogout")
     static let loginNotificationName = Notification.Name(rawValue: "UserLogin")
+    static let profileOpenNotificationName = Notification.Name(rawValue: "ProfileOpen")
 
     var id: Int64 = 0
     var name: String?
