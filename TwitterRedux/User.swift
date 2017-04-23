@@ -16,9 +16,11 @@ class User: NSObject {
     var name: String?
     var screenname: String?
     var tagline: String?
+    var location: String?
     var followersCount: Int = 0
     var friendsCount: Int = 0
     var listedCount: Int = 0
+    var statusesCount: Int = 0
     var favoritesCount: Int = 0
     var following: Bool = false
     var dateCreated: Date?
@@ -33,11 +35,13 @@ class User: NSObject {
         id = (dictionary["id"] as? Int64) ?? 0
         name = dictionary["name"] as? String
         screenname = dictionary["screen_name"] as? String
+        location = dictionary["location"] as? String
         tagline = dictionary["description"] as? String
         followersCount = (dictionary["followers_count"] as? Int) ?? 0
         friendsCount = (dictionary["friends_count"] as? Int) ?? 0
         listedCount = (dictionary["listed_count"] as? Int) ?? 0
         favoritesCount = (dictionary["favourites_count"] as? Int) ?? 0
+        statusesCount = (dictionary["statuses_count"] as? Int) ?? 0
         following = (dictionary["following"] as? Bool) ?? false
         let dateCreatedString = dictionary["created_at"] as? String
         
@@ -52,7 +56,7 @@ class User: NSObject {
             profileUrl = URL(string: profileUrlString)
         }
         
-        let profileBannerUrlString = dictionary["profile_image_url_https"] as? String
+        let profileBannerUrlString = dictionary["profile_banner_url"] as? String
         if let profileBannerUrlString = profileBannerUrlString {
             profileBannerUrl = URL(string: profileBannerUrlString)
         }
