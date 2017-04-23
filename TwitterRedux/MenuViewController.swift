@@ -12,7 +12,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     @IBOutlet weak var tableView: UITableView!
     
-    let menuOptions = [ "Profile", "Timeline", "Mentions" ]
+    let menuOptions = [ "Profile", "Timeline", "Mentions", "Log Out" ]
     
     private var profileViewController: UIViewController!
     private var timelineViewController: UIViewController!
@@ -36,6 +36,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         viewControllers.append(profileViewController)
         viewControllers.append(timelineViewController)
         viewControllers.append(mentionsViewController)
+        viewControllers.append(loginViewController)
 
         // Handle login notification to change content view to timeline.
         NotificationCenter.default.addObserver(forName: User.loginNotificationName, object: nil, queue: OperationQueue.main) { (notification) in
@@ -68,7 +69,10 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        
+        let contentViewController = viewControllers[indexPath.row]
+        if contentViewController == loginViewController {
+            TwitterClient.sharedInstance.logout()
+        }
         hamburguerViewController.contentViewController = viewControllers[indexPath.row]
     }
 
