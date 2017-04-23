@@ -43,15 +43,18 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func refreshControlAction(_ refreshControl: UIRefreshControl) {
+        MBProgressHUD.hide(for: self.view, animated: true)
         MBProgressHUD.showAdded(to: self.view, animated: true)
+        print("refreshControlAction; status=start")
         
-        TwitterClient.sharedInstance.getUserTweets(success: { (tweets: [Tweet]) in
+        TwitterClient.sharedInstance.getUserTweets(userId: user?.id, success: { (tweets: [Tweet]) in
+            print("refreshControlAction; status=success")
             self.tweets = tweets
             self.tableView.reloadData()
-            MBProgressHUD.hide(for: self.view, animated: true)
             refreshControl.endRefreshing()
+            MBProgressHUD.hide(for: self.view, animated: true)
         }) { (error: Error) in
-            print(error.localizedDescription)
+            print("refreshControlAction; status=error; \(error.localizedDescription)")
             MBProgressHUD.hide(for: self.view, animated: true)
             refreshControl.endRefreshing()
         }

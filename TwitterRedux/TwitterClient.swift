@@ -87,8 +87,12 @@ class TwitterClient: BDBOAuth1SessionManager {
         })
     }
     
-    func getUserTweets(success: @escaping ([Tweet]) -> (), failure: @escaping (Error) -> ()) {
-        get("1.1/statuses/user_timeline.json", parameters: nil, success: { (task: URLSessionDataTask, response: Any) in
+    func getUserTweets(userId: Int64?, success: @escaping ([Tweet]) -> (), failure: @escaping (Error) -> ()) {
+        var url = "1.1/statuses/user_timeline.json"
+        if let userId = userId {
+            url += "?user_id=\(userId)"
+        }
+        get(url, parameters: nil, success: { (task: URLSessionDataTask, response: Any) in
             let data = response as! [NSDictionary]
             let tweets = Tweet.tweetsWithArray(dictionaries: data)
             print("getUserTweets; status=ok; total=\(tweets.count)")
