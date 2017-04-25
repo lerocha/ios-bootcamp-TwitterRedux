@@ -85,19 +85,17 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "TweetCell", for: indexPath) as! TweetCell
         cell.tweet = tweets[indexPath.row]
+        cell.selectionStyle = .none
         return cell
     }
     
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Pass the selected object to the new view controller.
-        let navigationController = segue.destination as! UINavigationController
-        
-        // Pass the selected object to the new view controller.
-        if let tweetDetailsViewController = navigationController.topViewController as? TweetDetailsViewController {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 1 {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let tweetDetailsViewController = storyboard.instantiateViewController(withIdentifier: "TweetDetailsViewController") as! TweetDetailsViewController
             // Set the model for the details view controller
-            let cel = sender as! TweetCell
-            tweetDetailsViewController.tweet = cel.tweet
+            tweetDetailsViewController.tweet = tweets[indexPath.item]
+            self.navigationController?.pushViewController(tweetDetailsViewController, animated: true)
         }
     }
 }

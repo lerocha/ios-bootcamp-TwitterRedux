@@ -511,7 +511,7 @@
         <!--Tweet Details View Controller-->
         <scene sceneID="Dao-mQ-5cx">
             <objects>
-                <viewController id="qXE-xH-P8L" customClass="TweetDetailsViewController" customModule="TwitterRedux" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TweetDetailsViewController" id="qXE-xH-P8L" customClass="TweetDetailsViewController" customModule="TwitterRedux" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Io6-6X-0Iu"/>
                         <viewControllerLayoutGuide type="bottom" id="oN2-bt-AlP"/>
@@ -670,11 +670,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="YNs-jT-xpO">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="Oqk-9B-kJR">
-                            <connections>
-                                <action selector="onCancelButton:" destination="qXE-xH-P8L" id="mBT-Iw-2Y0"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="backBarButtonItem" title="Cancel" id="alD-qX-kSb"/>
                         <rightBarButtonItems>
                             <barButtonItem image="like-action" id="bHQ-rb-MWo">
                                 <inset key="imageInsets" minX="20" minY="20" maxX="0.0" maxY="20"/>
