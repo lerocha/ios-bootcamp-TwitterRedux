@@ -352,13 +352,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="93" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VfW-8W-6mW">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="93" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VfW-8W-6mW">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="THO-wX-tYU" firstAttribute="top" secondItem="VfW-8W-6mW" secondAttribute="bottom" id="6BE-hq-tLR"/>
+                            <constraint firstItem="VfW-8W-6mW" firstAttribute="leading" secondItem="aCf-Jp-saI" secondAttribute="leading" id="9i4-PC-ZwY"/>
+                            <constraint firstItem="VfW-8W-6mW" firstAttribute="top" secondItem="aCf-Jp-saI" secondAttribute="top" id="GPn-4q-nqO"/>
+                            <constraint firstAttribute="trailing" secondItem="VfW-8W-6mW" secondAttribute="trailing" id="qDR-vx-i0c"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Mentions" id="JdK-B2-Ihs"/>
                     <connections>
