@@ -23,6 +23,8 @@ class TimelineViewController: UIViewController, UITableViewDelegate, UITableView
         tableView.dataSource = self
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 200
+        let cell = UINib(nibName: "TweetCell", bundle: Bundle.main)
+        tableView.register(cell, forCellReuseIdentifier: "TweetCell")
         
         // initialize a UIRefreshControl
         let refreshControl = UIRefreshControl()
@@ -58,20 +60,15 @@ class TimelineViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TweetCell", for: indexPath) as! TweetCell
         cell.tweet = tweets[indexPath.item]
-        //        cell.selectionStyle = .none
+        cell.selectionStyle = .none
         return cell
     }
     
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Pass the selected object to the new view controller.
-        let navigationController = segue.destination as! UINavigationController
-        
-        // Pass the selected object to the new view controller.
-        if let tweetDetailsViewController = navigationController.topViewController as? TweetDetailsViewController {
-            // Set the model for the details view controller
-            let cel = sender as! TweetCell
-            tweetDetailsViewController.tweet = cel.tweet
-        }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let tweetDetailsViewController = storyboard.instantiateViewController(withIdentifier: "TweetDetailsViewController") as! TweetDetailsViewController
+        // Set the model for the details view controller
+        tweetDetailsViewController.tweet = tweets[indexPath.item]
+        self.navigationController?.pushViewController(tweetDetailsViewController, animated: true)
     }
 }
