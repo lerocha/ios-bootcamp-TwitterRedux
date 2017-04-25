@@ -26,6 +26,8 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         tableView.dataSource = self
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 200
+        let cell = UINib(nibName: "TweetCell", bundle: Bundle.main)
+        tableView.register(cell, forCellReuseIdentifier: "TweetCell")
         
         // initialize a UIRefreshControl
         refreshControl.addTarget(self, action: #selector(TimelineViewController.refreshControlAction(_:)), for: UIControlEvents.valueChanged)
