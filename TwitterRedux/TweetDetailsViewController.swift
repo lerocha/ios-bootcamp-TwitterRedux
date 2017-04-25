@@ -44,15 +44,7 @@ class TweetDetailsViewController: UIViewController {
                 screennameLabel.text = "@" + screenname
                 replyLabel.text = "Replying to @\(screenname)"
             }
-            if let timestamp = tweet.timestamp {
-                let hours = Calendar.current.dateComponents([.hour], from: timestamp, to: Date()).hour ?? 0
-                if hours > 0 {
-                    timestampLabel.text = String("\(hours)h")
-                } else {
-                    let minutes = Calendar.current.dateComponents([.minute], from: timestamp, to: Date()).minute ?? 0
-                    timestampLabel.text = String("\(minutes)m")
-                }
-            }
+            timestampLabel.text = tweet.timestampText
             messageLabel.text = tweet.text
             replyCountLabel.text = String("\(tweet.retweetCount)")
             retweetCountLabel.text = String("\(tweet.retweetCount)")
